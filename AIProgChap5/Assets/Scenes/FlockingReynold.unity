@@ -856,6 +856,18 @@ MonoBehaviour:
   avoidanceForce: 20
   followVelocity: 4
   followRadius: 40
+--- !u!114 &1036230703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036230698}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2763278939fbb80488d63df8ecb16942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1049924183
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1257,6 +1269,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1746899490}
   - component: {fileID: 1746899489}
+  - component: {fileID: 1746899491}
   m_Layer: 0
   m_Name: FlockController
   m_TagString: Untagged
@@ -1271,14 +1284,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1746899488}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f76277adf09d0947b33eec5566f616d, type: 3}
+  m_Script: {fileID: 11500000, guid: e04f7581766ea0546825ca12d76f2e85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0, y: 0, z: 0}
-  bound: {x: 0, y: 0, z: 0}
-  speed: 100
+  minVelocity: 1
+  maxVelocity: 8
+  flockSize: 20
+  centerWeight: 1
+  velocityWeight: 1
+  separationWeight: 1
+  followWeight: 1
+  randomizeWeight: 1
+  prefab: {fileID: 0}
+  target: {fileID: 0}
 --- !u!4 &1746899490
 Transform:
   m_ObjectHideFlags: 0
@@ -1302,6 +1322,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1746899491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746899488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f76277adf09d0947b33eec5566f616d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: {x: 0, y: 0, z: 0}
+  bound: {x: 0, y: 0, z: 0}
+  speed: 100
 --- !u!1 &2143525201
 GameObject:
   m_ObjectHideFlags: 0
@@ -1332,14 +1367,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa35e8fcccbe66c4f82a793073275b96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axes: 0
-  sensitivityX: 15
-  sensitivityY: 15
-  minimumX: -360
-  maximumX: 360
-  minimumY: -60
-  maximumY: 60
-  rotationY: 0
 --- !u!4 &2143525203
 Transform:
   m_ObjectHideFlags: 0
